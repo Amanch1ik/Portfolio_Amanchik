@@ -44,8 +44,9 @@
         btn.type = 'button';
         btn.className = 'fold-toggle';
         btn.setAttribute('aria-expanded', 'false');
+        const initialLabel = document.documentElement.lang === 'en' ? 'Skills & how I work' : 'Навыки и процесс работы';
         btn.innerHTML =
-            '<span data-lang-ru="Навыки и процесс работы" data-lang-en="Skills & how I work">Навыки и процесс работы</span>' +
+            `<span data-lang-ru="Навыки и процесс работы" data-lang-en="Skills & how I work">${initialLabel}</span>` +
             '<i class="fas fa-chevron-down"></i>';
         bar.appendChild(btn);
         wrap.parentNode.insertBefore(bar, wrap);

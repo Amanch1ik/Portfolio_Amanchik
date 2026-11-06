@@ -1,6 +1,6 @@
 // Network-first SW: онлайн всегда свежий контент, кэш — запасной для офлайна.
 // (Старый cache-first отдавал устаревший index.html навсегда — отсюда «правки не видны».)
-const CACHE_NAME = 'portfolio-v4';
+const CACHE_NAME = 'portfolio-v5';
 const ASSETS = [
     './',
     './index.html',

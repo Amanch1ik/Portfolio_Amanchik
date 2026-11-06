@@ -45,14 +45,14 @@ function initLanguageSwitcher() {
     const switcher = document.getElementById('langSwitcher');
     const langActive = switcher.querySelector('.lang-active');
     const langInactive = switcher.querySelector('.lang-inactive');
-    let currentLang = localStorage.getItem('portfolio-lang') || 'ru';
+    let currentLang = localStorage.getItem('portfolio-lang-v2') || 'en';
     applyLanguage(currentLang);
     updateSwitcherUI(currentLang);
     switcher.addEventListener('click', () => {
         currentLang = currentLang === 'ru' ? 'en' : 'ru';
         applyLanguage(currentLang);
         updateSwitcherUI(currentLang);
-        localStorage.setItem('portfolio-lang', currentLang);
+        localStorage.setItem('portfolio-lang-v2', currentLang);
     });
     function applyLanguage(lang) {
         document.documentElement.lang = lang;
@@ -507,7 +507,7 @@ async function initGitHubRepos() {
             el.classList.add('is-in', 'visible');
         });
         // re-apply current language to the freshly injected bilingual bits
-        const lang = localStorage.getItem('portfolio-lang') || 'ru';
+        const lang = localStorage.getItem('portfolio-lang-v2') || 'en';
         githubSection.querySelectorAll('[data-lang-ru][data-lang-en]').forEach((el) => {
             const text = el.getAttribute(`data-lang-${lang}`);
             if (text) {
